@@ -13,3 +13,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 An algorithm is presented to simulate spatially-explicity neutral communities in a study plot embedded within an infinite landscape.  The algorithm is backward in time (i.e. coalescent) providing computational efficiences, further added by clever indexing.  It should be noted that the coalescent algorithm they present can only provide simulated communities in equilibrium because the coalesences in allowed to occur over potentially infinite time.  This algorithm is used in @rosindell2007SAR to study the SAR.
 
+### @odwyer2017
+
+Spatially explicit backward time model with analytical results.  Effectively @rosindell2008ecoInfo but with an approximate analytical solution. 
+
+### @odwyer2010
+
+Cool paper, but the field-theoretic approach is not correct, as shown by our own @grilli2012.
+
