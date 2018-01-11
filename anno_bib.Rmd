@@ -1,0 +1,15 @@
+---
+title: "annotated bib"
+output: html_document
+date: "`r format(Sys.time(), '%d %B %Y')`"
+bibliography: megaModel.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### @rosindell2008ecoInfo
+
+An algorithm is presented to simulate spatially-explicity neutral communities in a study plot embedded within an infinite landscape.  The algorithm is backward in time (i.e. coalescent) providing computational efficiences, further added by clever indexing.  It should be noted that the coalescent algorithm they present can only provide simulated communities in equilibrium because the coalesences in allowed to occur over potentially infinite time.  This algorithm is used in @rosindell2007SAR to study the SAR.
+
