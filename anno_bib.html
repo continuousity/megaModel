@@ -136,6 +136,10 @@ $(document).ready(function () {
 <h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="etienne2011"><strong>???</strong></span>)</span></h3>
 <p>Uses <span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2008ecoInfo"><strong>???</strong></span>)</span> to simulate spatially explicit lanscapes, but then fits classic spatially implicity neutral theory to those. Shows that the results are not consistent, and that spatially implicit theory does a better job matching real data. Suggests that perhaps field theory models (e.g spatailly implicit neutral theory) do better because they average over many details that explicit models must get exactly right</p>
 </div>
+<div id="rosindell2013" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2013"><strong>???</strong></span>)</span></h3>
+<p>Again uses <span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2008ecoInfo"><strong>???</strong></span>)</span> to show that Fisher log-series shows up at small and largest scales. This brings spatially explicit neutral SAD back in better agreement with data, also provides oppurtunities to more rigorously test neutral theory.</p>
+</div>
 <div id="odwyer2010" class="section level3">
 <h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="odwyer2010"><strong>???</strong></span>)</span></h3>
 <p>Cool paper, but the field-theoretic approach is not correct, as shown by our own <span class="citation">(<span class="citeproc-not-found" data-reference-id="grilli2012"><strong>???</strong></span>)</span>.</p>
@@ -147,9 +151,36 @@ $(document).ready(function () {
 <h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="etienne2007"><strong>???</strong></span>)</span></h3>
 <p>Provides an analytical solution to sampling formula for multiple samples from the same metacommunity. Also provides an algorithm (seemingly backword in time) for generating such samples. This algorithm could be a very good jumping off point for simulating multiple islands. Immigration between islands would need to be added. The algorithm seems to be vectorizable too.</p>
 </div>
+<div id="rosindell2013isalnd" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2013Isalnd"><strong>???</strong></span>)</span></h3>
+<p>The model for neutral island community evolution. Options for different speciation mechanisms including protracted.</p>
+</div>
+</div>
+<div id="nuanced-speciation-models" class="section level1">
+<h1>Nuanced speciation models</h1>
+<div id="rosindell2011" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2011"><strong>???</strong></span>)</span></h3>
+<p>The protracted speciation model. Backward in time simulation. The model retains much of the positive traits of classic neutral theory (e.g. Fisher log series) but has more realistic dynamics.</p>
+</div>
+<div id="ttienne2011fission" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="ttienne2011Fission"><strong>???</strong></span>)</span></h3>
+<p>A different model for more realistic speciation in which species randomly split into new species. Does a worse job (but not by much) of fitting the SAD, and the metacommunity SAD becomes broken stick instead of Fisher—could be a good thing or a bad thing. But the deep time dynamics (i.e. speciation events) are more realistic. No backward time simulation is possible because random fission is not a reversible process.</p>
+</div>
+<div id="jabot2008" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="jabot2008"><strong>???</strong></span>)</span></h3>
+<p>Uses <span class="citation">(<span class="citeproc-not-found" data-reference-id="etienne2005"><strong>???</strong></span>)</span> simulation method to do ABC on phylogenies and abundance data. Shows that phylogenetic balance helps parameter identifiability.</p>
+</div>
+<div id="etienne2005" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="etienne2005"><strong>???</strong></span>)</span></h3>
+<p>A seemingly backward in time (“ancestry assignment”) algorithm for the simple neutral theory. But inherently it produces phylogenies, and possibly geneologies on which mutations could be introduced.</p>
+</div>
 </div>
 <div id="environmental-and-non-neutral-theories" class="section level1">
 <h1>Environmental and non-neutral theories</h1>
+<div id="rosindell2015" class="section level3">
+<h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="rosindell2015"><strong>???</strong></span>)</span></h3>
+<p>Basically the same model as <span class="citation">(<span class="citeproc-not-found" data-reference-id="kessler2014"><strong>???</strong></span>)</span> but assuming brownian motion of fitness instead of fitness evolving on a quadratic fitness landscape. Forward time simulation implemented.</p>
+</div>
 <div id="kessler2014" class="section level3">
 <h3><span class="citation">(<span class="citeproc-not-found" data-reference-id="kessler2014"><strong>???</strong></span>)</span></h3>
 <p>Provides several models, but most usefully a forward time simulation of all the dynamics of neutral theory plus heiritable differences in fitness. Could be useful for thinking about environmentally explicit models. No code or pseudo code provided.</p>
