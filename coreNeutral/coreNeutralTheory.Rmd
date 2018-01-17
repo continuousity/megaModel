@@ -13,22 +13,34 @@ Provides a great overview of neutral theory, its core history and recent advance
 
 ### @etienne2007rev
 
-A more quantitative review, getting into the details of the master equation approach [@alonso2004] and the coalescent approach [@etienne2004, @etienne2005]
+A more quantitative review, getting into the details of the master equation approach [@alonso2004] and the coalescent approach [@etienne2004; @etienne2005]
 
 
 # Detailed papers
 
 ### @alonso2004
 
+Describes a master equation approach to estimating the expected number of species with $n$ individuals.  Their approach shows that the local community is not a simple subsample of the metacommunity (and thus not exactly Fisher log-series) especially at low diversity.
+
 ### @etienne2004
+
+Provides the first coalescent-based approach to producing the probability of observing a given vector of species abundances.  Continues to put this approach in a Bayesian inference framework.
 
 ### @etienne2005
 
+Simplifies [@etienne2004] into one sampling formula for the probability of an abundance vector.
+
 ### @etienne2007zeroSum
+
+Somewhat of a reconciliation between the exact coalescent-based approaches Etienne have taken with the non-zero-sum assumptions of authors of mean-feld approaches.  @etienne2007zeroSum show that the neutral master equations with zero-sum and without zero-sum assumptions actually lead to the same sampling distribution.
 
 ### @chisholm2014
 
+A nice re-dirivation of the master equation approach, with perhaps more intuitive steps.  Also nicely addresses the problems with species ages in neutral theory.
+
 ### @conlisk2010
+
+A very simple and easy derivation of the local community.  Connects the Hubbell model to a Polya urn process.
 
 
 # References
