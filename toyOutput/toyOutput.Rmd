@@ -1,0 +1,33 @@
+---
+title: "Toy Output"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Looking at `megalog`
+
+```{r, fig.align='center', fig.width=4, fig.height=8}
+library(viridis)
+
+megalog <- read.table('output/megalog.txt', header = TRUE, sep = '\t')
+
+palette(viridis(length(unique(megalog$X.eq))))
+layout(matrix(1:length(unique(megalog$X.eq)), ncol = 2, byrow = TRUE))
+
+par(mar = c(2, 2, 0, 0), oma = c(1.2, 1.2, 0, 0) + 0.5, mgp = c(1.75, 0.75, 0))
+
+for(i in 1:length(unique(megalog$X.eq))) {
+    j <- sort(unique(megalog$X.eq))[i]
+    with(megalog[megalog$X.eq == j, ],
+         plot(Col_time, Loc_Abund, col = i, xlab = '', ylab = '',
+              xlim = range(megalog$Col_time, na.rm = TRUE),
+              ylim = range(megalog$Loc_Abund, na.rm = TRUE)))
+    legend('topright', legend = expression(Lambda), text.col = i, pch = NA, bty = 'n', cex = 1.5)
+}
+
+mtext('Colonization time', line = 0.5, outer = TRUE, side = 1)
+mtext('Local abundance', line = 0.5, outer = TRUE, side = 2)
+```
