@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Looking at `megalog`
 
-```{r, fig.align='center', fig.width=4, fig.height=8}
+```{r, fig.width=4, fig.height=8}
 library(viridis)
 
 megalog <- read.table('output/megalog.txt', header = TRUE, sep = '\t')
@@ -25,9 +25,53 @@ for(i in 1:length(unique(megalog$X.eq))) {
          plot(Col_time, Loc_Abund, col = i, xlab = '', ylab = '',
               xlim = range(megalog$Col_time, na.rm = TRUE),
               ylim = range(megalog$Loc_Abund, na.rm = TRUE)))
-    legend('topright', legend = expression(Lambda), text.col = i, pch = NA, bty = 'n', cex = 1.5)
+    la <- round(j, 3)
+    legend('topright', legend = bquote(Lambda==.(la)), text.col = i, pch = NA, bty = 'n', cex = 1.5)
 }
 
 mtext('Colonization time', line = 0.5, outer = TRUE, side = 1)
 mtext('Local abundance', line = 0.5, outer = TRUE, side = 2)
+```
+
+```{r, fig.width=7, fig.height=4}
+library(pika)
+
+La <- sort(unique(megalog$X.eq))
+fisherDev <- sapply(La, function(la) {
+    dat <- megalog[megalog$X.eq == la, ]
+    thisSAD <- sad(dat$Loc_Abund, model = 'fish', keepData = TRUE)
+    return(logLikZ(thisSAD)$z)
+})
+
+fisherDev <- cbind(mean = fisherDev, lo = fisherDev + qchisq(0.025, 1) - 1, hi = fisherDev + qchisq(0.975, 1) - 1)
+
+tajD <- t(sapply(La, function(la) {
+    dat <- megalog[megalog$X.eq == la, ]
+    out <- c(mean(dat$tajD_island), median(dat$tajD_island), quantile(dat$tajD_island, probs = c(0.025, 0.975)))
+    names(out) <- c('mean', 'med', 'lo', 'hi')
+    return(out)
+}))
+
+
+
+palette(viridis(length(unique(megalog$X.eq))))
+
+layout(matrix(c(1, 1, 2, 3), nrow = 2))
+par(mar = c(3.5, 3.5, 0, 0) + 0.2, mgp = c(2, 0.75, 0), cex.lab = 1.2)
+
+plot(tajD[, 'mean'], fisherDev[, 'mean'], col = 1:nrow(tajD), cex = 2, pch = 16, 
+     xlab = "Tajima's D", ylab = 'Deviation from METE', 
+     panel.first = segments(x0 = tajD[-nrow(tajD), 'mean'], x1 = tajD[-1, 'mean'], 
+                            y0 = fisherDev[-nrow(fisherDev), 'mean'], y1 = fisherDev[-1, 'mean'], 
+                            col = 1:(nrow(tajD) - 1), lwd = 2))
+
+plot(La, tajD[, 'mean'], ylim = range(tajD), col = 1:nrow(tajD), cex = 2, pch = 16, 
+     xlab = '', ylab = "Tajima's D",
+     panel.first = polygon(c(La, rev(La)), c(tajD[, 'lo'], rev(tajD[, 'hi'])), 
+                           col = gray(0.75, 0.5), border = NA))
+
+plot(La, fisherDev[, 'mean'], ylim = range(fisherDev), col = 1:nrow(tajD), cex = 2, pch = 16, 
+     xlab = expression(Lambda), ylab = 'Dev. from METE',
+     panel.first = polygon(c(La, rev(La)), c(fisherDev[, 'lo'], rev(fisherDev[, 'hi'])), 
+                           col = gray(0.75, 0.5), border = NA))
 ```
