@@ -44,11 +44,15 @@ The model for neutral island community evolution.  Options for different speciat
 
 # Nuanced speciation models
 
-### @rosindell2011
+### @rosindell2010
 
 The protracted speciation model.  Backward in time simulation.  The model retains much of the positive traits of classic neutral theory (e.g. Fisher log series) but has more realistic dynamics.
 
-### @ttienne2011Fission
+### @rosindell&phillimore2011
+
+Extension of the protracted speciation model to include anagenesis/cladogenesis, and immigration rate proportional to island size.
+
+### @ettienne2011Fission
 
 A different model for more realistic speciation in which species randomly split into new species.  Does a worse job (but not by much) of fitting the SAD, and the metacommunity SAD becomes broken stick instead of Fisher---could be a good thing or a bad thing.  But the deep time dynamics (i.e. speciation events) are more realistic.  No backward time simulation is possible because random fission is not a reversible process.
 
