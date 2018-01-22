@@ -8,7 +8,7 @@ bibliography: megaModel.bib
 
 ### @rosindell2008ecoInfo
 
-An algorithm is presented to simulate spatially-explicity neutral communities in a study plot embedded within an infinite landscape.  The algorithm is backward in time (i.e. coalescent) providing computational efficiences, further added by clever indexing.  It should be noted that the coalescent algorithm they present can only provide simulated communities in equilibrium because the coalesences in allowed to occur over potentially infinite time.  This algorithm is used in @rosindell2007SAR to study the SAR.
+An algorithm is presented to simulate spatially-explicity neutral communities in a study plot embedded within an infinite landscape.  The algorithm is backward in time (i.e. coalescent) providing computational efficiences, further added by clever indexing.  It should be noted that the coalescent algorithm they present can only provide simulated communities in equilibrium because the coalesences in allowed to occur over potentially infinite time.  This algorithm is used in @rosindell2007 to study the SAR.
 
 ### @odwyer2017
 
@@ -18,7 +18,7 @@ Spatially explicit backward time model with analytical results.  Effectively @ro
 
 Uses @rosindell2008ecoInfo to simulate spatially explicit lanscapes, but then fits classic spatially implicity neutral theory to those.  Shows that the results are not consistent, and that spatially implicit theory does a better job matching real data.  Suggests that perhaps field theory models (e.g spatailly implicit neutral theory) do better because they average over many details that explicit models must get exactly right
 
-### @rosindell2013
+### @rosindell2013sadScaling
 
 Again uses @rosindell2008ecoInfo to show that Fisher log-series shows up at small and largest scales.  This brings spatially explicit neutral SAD back in better agreement with data, also provides oppurtunities to more rigorously test neutral theory.
 
@@ -33,7 +33,7 @@ Cool paper, but the field-theoretic approach is not correct, as shown by our own
 
 Provides an analytical solution to sampling formula for multiple samples from the same metacommunity.  Also provides an algorithm (seemingly backword in time) for generating such samples.  This algorithm could be a very good jumping off point for simulating multiple islands.  Immigration between islands would need to be added.  The algorithm seems to be vectorizable too.
 
-### @rosindell2013Isalnd
+### @rosindell2013island
 
 The model for neutral island community evolution.  Options for different speciation mechanisms including protracted.
 
@@ -43,15 +43,15 @@ The model for neutral island community evolution.  Options for different speciat
 
 The protracted speciation model.  Backward in time simulation.  The model retains much of the positive traits of classic neutral theory (e.g. Fisher log series) but has more realistic dynamics.
 
-### @rosindell&phillimore2011
+### @rosindell2011
 
 Extension of the protracted speciation model to include anagenesis/cladogenesis, and immigration rate proportional to island size.
 
-### @ettienne2011Fission
+### @etienne2011fission
 
 A different model for more realistic speciation in which species randomly split into new species.  Does a worse job (but not by much) of fitting the SAD, and the metacommunity SAD becomes broken stick instead of Fisher---could be a good thing or a bad thing.  But the deep time dynamics (i.e. speciation events) are more realistic.  No backward time simulation is possible because random fission is not a reversible process.
 
-### @jabot2008
+### @jabot2009
 
 Uses @etienne2005 simulation method to do ABC on phylogenies and abundance data.  Shows that phylogenetic balance helps parameter identifiability.
 
@@ -72,3 +72,5 @@ Provides several models, but most usefully a forward time simulation of all the 
 ### @carmel2017
 
 Re-dirivation of the fitness difference vs. niche difference framework, but with rigorous mathematics.  Could be a useful model for simulating species interactions but the paper itself dosen't present a simulation, only analytical results.
+
+# References
